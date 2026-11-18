@@ -1,0 +1,230 @@
+{
+	"latest": {
+		"version": "1.13.5",
+		"commit": "a3663e9e2cc4c258018a28ee068e50cc12f3ed2d",
+		"go": "1.27.3",
+		"watcher": {
+			"version": "0.14.5",
+			"commit": "06f84a1314be18f5e697ebbf28c0fab2d17c9c39"
+		},
+		"variants": {
+			"php8.6-rc-trixie": {
+				"php": "8.6-rc",
+				"suite": "trixie",
+				"from": "php:8.6-rc-cli-trixie",
+				"golang": "golang:1.27-trixie",
+				"arches": [
+					"amd64",
+					"arm32v7",
+					"arm64v8",
+					"i386",
+					"ppc64le",
+					"riscv64",
+					"s390x"
+				]
+			},
+			"php8.6-rc-alpine3.24": {
+				"php": "8.6-rc",
+				"suite": "alpine3.24",
+				"from": "php:8.6-rc-cli-alpine3.24",
+				"golang": "golang:1.27-alpine3.24",
+				"arches": [
+					"amd64",
+					"arm32v6",
+					"arm32v7",
+					"arm64v8",
+					"i386",
+					"ppc64le",
+					"riscv64",
+					"s390x"
+				]
+			},
+			"php8.5-trixie": {
+				"php": "8.5",
+				"suite": "trixie",
+				"from": "php:8.5-zts-trixie",
+				"golang": "golang:1.27-trixie",
+				"arches": [
+					"amd64",
+					"arm32v7",
+					"arm64v8",
+					"i386",
+					"ppc64le",
+					"riscv64",
+					"s390x"
+				]
+			},
+			"php8.5-alpine3.24": {
+				"php": "8.5",
+				"suite": "alpine3.24",
+				"from": "php:8.5-zts-alpine3.24",
+				"golang": "golang:1.27-alpine3.24",
+				"arches": [
+					"amd64",
+					"arm32v6",
+					"arm32v7",
+					"arm64v8",
+					"i386",
+					"ppc64le",
+					"riscv64",
+					"s390x"
+				]
+			},
+			"php8.5-rc-trixie": {
+				"php": "8.5-rc",
+				"suite": "trixie",
+				"from": "php:8.5-rc-zts-trixie",
+				"golang": "golang:1.27-trixie",
+				"arches": [
+					"amd64",
+					"arm32v7",
+					"arm64v8",
+					"i386",
+					"ppc64le",
+					"riscv64",
+					"s390x"
+				]
+			},
+			"php8.5-rc-alpine3.24": {
+				"php": "8.5-rc",
+				"suite": "alpine3.24",
+				"from": "php:8.5-rc-zts-alpine3.24",
+				"golang": "golang:1.27-alpine3.24",
+				"arches": [
+					"amd64",
+					"arm32v6",
+					"arm32v7",
+					"arm64v8",
+					"i386",
+					"ppc64le",
+					"riscv64",
+					"s390x"
+				]
+			},
+			"php8.4-trixie": {
+				"php": "8.4",
+				"suite": "trixie",
+				"from": "php:8.4-zts-trixie",
+				"golang": "golang:1.27-trixie",
+				"arches": [
+					"amd64",
+					"arm32v7",
+					"arm64v8",
+					"i386",
+					"ppc64le",
+					"riscv64",
+					"s390x"
+				]
+			},
+			"php8.4-alpine3.24": {
+				"php": "8.4",
+				"suite": "alpine3.24",
+				"from": "php:8.4-zts-alpine3.24",
+				"golang": "golang:1.27-alpine3.24",
+				"arches": [
+					"amd64",
+					"arm32v6",
+					"arm32v7",
+					"arm64v8",
+					"i386",
+					"ppc64le",
+					"riscv64",
+					"s390x"
+				]
+			},
+			"php8.4-rc-trixie": {
+				"php": "8.4-rc",
+				"suite": "trixie",
+				"from": "php:8.4-rc-zts-trixie",
+				"golang": "golang:1.27-trixie",
+				"arches": [
+					"amd64",
+					"arm32v7",
+					"arm64v8",
+					"i386",
+					"ppc64le",
+					"riscv64",
+					"s390x"
+				]
+			},
+			"php8.4-rc-alpine3.24": {
+				"php": "8.4-rc",
+				"suite": "alpine3.24",
+				"from": "php:8.4-rc-zts-alpine3.24",
+				"golang": "golang:1.27-alpine3.24",
+				"arches": [
+					"amd64",
+					"arm32v6",
+					"arm32v7",
+					"arm64v8",
+					"i386",
+					"ppc64le",
+					"riscv64",
+					"s390x"
+				]
+			},
+			"php8.3-trixie": {
+				"php": "8.3",
+				"suite": "trixie",
+				"from": "php:8.3-zts-trixie",
+				"golang": "golang:1.27-trixie",
+				"arches": [
+					"amd64",
+					"arm32v7",
+					"arm64v8",
+					"i386",
+					"ppc64le",
+					"riscv64",
+					"s390x"
+				]
+			},
+			"php8.3-alpine3.24": {
+				"php": "8.3",
+				"suite": "alpine3.24",
+				"from": "php:8.3-zts-alpine3.24",
+				"golang": "golang:1.27-alpine3.24",
+				"arches": [
+					"amd64",
+					"arm32v6",
+					"arm32v7",
+					"arm64v8",
+					"i386",
+					"ppc64le",
+					"riscv64",
+					"s390x"
+				]
+			},
+			"php8.2-trixie": {
+				"php": "8.2",
+				"suite": "trixie",
+				"from": "php:8.2-zts-trixie",
+				"golang": "golang:1.27-trixie",
+				"arches": [
+					"amd64",
+					"arm32v7",
+					"arm64v8",
+					"i386",
+					"ppc64le",
+					"riscv64",
+					"s390x"
+				]
+			},
+			"php8.2-alpine3.24": {
+				"php": "8.2",
+				"suite": "alpine3.24",
+				"from": "php:8.2-zts-alpine3.24",
+				"golang": "golang:1.27-alpine3.24",
+				"arches": [
+					"amd64",
+					"arm32v6",
+					"arm32v7",
+					"arm64v8",
+					"i386",
+					"ppc64le",
+					"riscv64",
+					"s390x"
+				]
+			}
+		}
+	}
+}
