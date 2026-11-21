@@ -71,15 +71,14 @@ RUN --mount=type=bind,from=golang:1.27-alpine3.24,source=/usr/local/go,target=/u
 	setcap cap_net_bind_service=+p /usr/local/bin/frankenphp; \
 	\
 	mkdir -p \
-		/app/public \
 		/config/caddy \
 		/data/caddy \
-		/etc/caddy \
-		/etc/frankenphp \
+		/etc/frankenphp/Caddyfile.d \
 	; \
-	cp Caddyfile /etc/caddy/Caddyfile; \
-	ln /etc/caddy/Caddyfile /etc/frankenphp/Caddyfile; \
-	cp /usr/src/frankenphp/package/content/index.php /app/public/index.php; \
+	cp Caddyfile /etc/frankenphp/Caddyfile; \
+# the upstream docs use "/etc/frankenphp", but "/etc/caddy" is where people expect it (a symlink, so mounting or copying over either path replaces the one config)
+	ln -s /etc/frankenphp /etc/caddy; \
+	cp /usr/src/frankenphp/package/content/index.php /var/www/html/index.php; \
 	\
 	cd /; \
 	rm -rf /usr/src/frankenphp /tmp/go /tmp/go-build; \
@@ -109,7 +108,14 @@ RUN --mount=type=bind,from=golang:1.27-alpine3.24,source=/usr/local/go,target=/u
 
 COPY docker-php-entrypoint /usr/local/bin/
 
-WORKDIR /app
+# "/var/www/html" already exists in the "php" base image (and is where "php:apache" and "php:fpm" serve from)
+WORKDIR /var/www/html
+
+# these are the environment variables the upstream "Caddyfile" reads (it defaults to "public/" relative to the working directory, and to a "localhost" site that Caddy redirects to HTTPS)
+# https://github.com/php/frankenphp/blob/v1.13.5/caddy/frankenphp/Caddyfile
+ENV SERVER_ROOT /var/www/html
+# a bare port serves plain HTTP on every hostname (like the other web server images do); set this to a domain name to get automatic HTTPS
+ENV SERVER_NAME :80
 
 # https://caddyserver.com/docs/conventions#file-locations
 ENV XDG_CONFIG_HOME /config
@@ -122,4 +128,5 @@ EXPOSE 80
 EXPOSE 443
 EXPOSE 443/udp
 
-CMD ["frankenphp", "run", "--config", "/etc/frankenphp/Caddyfile", "--adapter", "caddyfile"]
+# "docker-php-entrypoint" supplies "frankenphp run --config /etc/frankenphp/Caddyfile" when there are no arguments (or only flags), so any "--config" a user passes simply comes last and wins
+CMD []
