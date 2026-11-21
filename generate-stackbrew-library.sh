@@ -11,7 +11,7 @@ cd "$(dirname "$(readlink -f "$BASH_SOURCE")")"
 commit="$(git log -1 --format='format:%H' HEAD -- '[^.]*/**')"
 [ -n "$commit" ]
 
-selfCommit="$(git log -1 --format='format:%H' HEAD -- "$self")"
+selfCommit="$(git log -1 --format='format:%H' HEAD -- 'generate-stackbrew-library.*')"
 cat <<-EOH
 # this file is generated via https://github.com/tianon-sso/docker-frankenphp/blob/$selfCommit/$self
 
