@@ -121,6 +121,5 @@ ENV GODEBUG cgocheck=0
 EXPOSE 80
 EXPOSE 443
 EXPOSE 443/udp
-EXPOSE 2019
 
 CMD ["frankenphp", "run", "--config", "/etc/frankenphp/Caddyfile", "--adapter", "caddyfile"]
